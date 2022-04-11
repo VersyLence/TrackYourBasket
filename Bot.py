@@ -9,7 +9,10 @@ from math import *
 from datetime import date
 
 bot = commands.Bot(command_prefix = a['pref'])
-headers = {'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Mobile Safari/537.36'}
+headers = {'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Mobile Safari/537.36',
+            'Accept':'application/json, text/plain, */*',
+            'Cookie':'spravka=dD0xNjQ5NjY5OTExO2k9MTk1LjE2NS4yMy4zNDtEPTA1MDhENTQyQjk5NDQ2ODg0Q0Y2Q0Q4REYxRkM3RDg1QTk5NzNGQkI0QzBBRENEQzQ3QjU2MENCQTc1NUVDMzgzNEUyQjI4Nzt1PTE2NDk2Njk5MTE3NjIzMTUwODU7aD01YjczNDM3YmJhZTBjNDljZmNhYWYxZWE1OTdkOWMyYg==; PHPSESSID=5a6cf07bb702402c934a9fe907b67f92; eda_web=%7B%22app%22%3A%7B%22lat%22%3Anull%2C%22lon%22%3Anull%2C%22ipLat%22%3Anull%2C%22ipLon%22%3Anull%2C%22deliveryTime%22%3Anull%2C%22xDeviceId%22%3A%22l1uivejs-a87dref3dq-o2v1343jd9l-4z9ndnrhfae%22%2C%22appBannerShown%22%3Afalse%2C%22isAdult%22%3Anull%2C%22yandexPlusCashbackOptInChecked%22%3Afalse%2C%22testRunId%22%3Anull%2C%22initialPromocode%22%3Anull%7D%7D',
+            'X-Device-Id':'l1uivejs-a87dref3dq-o2v1343jd9l-4z9ndnrhfae'}
 
 @bot.command()
 async def info(ctx):
