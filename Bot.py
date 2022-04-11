@@ -9,10 +9,11 @@ from math import *
 from datetime import date
 
 bot = commands.Bot(command_prefix = a['pref'])
+headers = {'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Mobile Safari/537.36'}
 
 @bot.command()
 async def info(ctx):
-    await ctx.send(f'+-weather [Country] [City], \n+-hello \n+-cost \n+-BD \n+-clear \n+-find')
+    await ctx.send(f'+-weather [Country] [City], \n+-hello \n+-cost \n+-BD')
 
 
 @bot.command()
@@ -45,7 +46,7 @@ async def cost(ctx):
     date1 = date1[:5]+ date1[6:]
     for i in range(len(lists)):
         url=lists[i]
-        response=requests.get(url)
+        response=requests.get(url, headers)
         soup = BeautifulSoup(response.text, 'lxml')
         step1 = soup.find_all('span', class_='UiKitPrice_price UiKitPrice_l UiKitPrice_medium')
         step2 = step1[numbers[i]]
@@ -57,7 +58,7 @@ async def cost(ctx):
                 user='root',
                 password='megivan25',
                 database="rating",
-            )as connection: 
+            )as connection:
                 with connection.cursor() as cursor:
                     cursor.execute("SELECT id FROM cost WHERE shop = '%s'" % date1)
                     _lastUpdateResult = cursor.fetchall()
@@ -110,8 +111,8 @@ async def clear(ctx):
         print(e)
 
 
-@bot.command() 
-async def find(ctx, product:str):
+@bot.command()
+async def comp(ctx, product:str):
     try:
         with connect(
             host="localhost",
