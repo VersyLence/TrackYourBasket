@@ -12,7 +12,7 @@ bot = commands.Bot(command_prefix = a['pref'])
 
 @bot.command()
 async def info(ctx):
-    await ctx.send(f'+-weather [Country] [City], \n+-hello \n+-cost \n+-BD')
+    await ctx.send(f'+-weather [Country] [City], \n+-hello \n+-cost \n+-BD \n+-clear \n+-find')
 
 
 @bot.command()
@@ -111,7 +111,7 @@ async def clear(ctx):
 
 
 @bot.command() 
-async def comp(ctx, product:str):
+async def find(ctx, product:str):
     try:
         with connect(
             host="localhost",
