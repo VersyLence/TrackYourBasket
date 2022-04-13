@@ -115,7 +115,7 @@ async def clear(ctx):
 
 
 @bot.command()
-async def comp(ctx, product:str):
+async def find(ctx, product:str):
     try:
         with connect(
             host="localhost",
